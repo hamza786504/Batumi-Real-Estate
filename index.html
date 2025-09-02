@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome (for social icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="./css/tailwind.css"></script>
+
+    <title>Batumi Luxury Real Estate - Home</title>
+
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(to right, #d4b48c, #8a6d3b);
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+    </style>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const closeMenu = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.remove("-translate-x-full");
+            mobileMenu.classList.add("translate-x-0");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+        });
+    </script>
+    <script>
+        // Optional: customize Tailwind on the fly
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#4f46e5', // indigo-600
+                            dark: '#3730a3'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<style>
+
+</style>
+</head>
+
+<body class="antialiased bg-gray-50 text-gray-900">
+
+
+    <!-- Header -->
+    <header class="z-50 bg-[#362f17ff] shadow-sm px-3">
+        <div class="container flex items-center justify-between max-w-6xl mx-auto">
+            <a href="/" class="logo"><img src="./images/logo.png" class="max-w-24" alt="logo" /></a>
+            <div class="menu">
+                <nav id="mobileMenu"
+                    class="fixed bg-brown-light top-0 left-0 w-3/4 md:w-auto h-full p-4 transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:top-auto md:left-auto md:p-0 md:bg-transparent md:translate-x-0 md:transition-none z-50">
+
+                    <!-- Close button -->
+                    <div id="closeMenu" class="md:hidden absolute cursor-pointer top-3 right-5 text-white text-5xl">
+                        &times;
+                    </div>
+
+                    <ul
+                        class="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center space-y-6 md:space-y-0 md:space-x-4 lg:space-x-8 py-8 md:py-0 overflow-y-auto">
+                        
+                        <li class="pt-10 md:hidden">
+                            <a href="tel:+971506544952"
+                                class="flex items-center justify-center space-x-2 text-white text-base bg-transparent border-2 border-white p-2 px-4 rounded-full hover:bg-brown-dark md:hover:border-white hover:border-brown-dark"><span><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </span><span>+971506544952</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Overlay -->
+                <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>
+            </div>
+            <div class="hidden md:block cta md:mr-4">
+                <a href="tel:+971506544952"
+                    class="flex items-center justify-center space-x-2 text-white text-2xl bg-transparent border-2 border-white md:py-2 md:text-lg p-3 px-8 rounded-full hover:bg-brown-dark md:hover:border-white md:hover:bg-white md:hover:text-brown-dark hover:border-brown-dark"><span><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                    </span> <span>+971506544952</span>
+                </a>
+            </div>
+            <!-- Hamburger -->
+            <div id="openMenu"
+                class="group md:hidden ml-4 flex flex-col items-end bg-white rounded-full p-3 scale-75 transform space-y-1 cursor-pointer transition-colors duration-300 hover:bg-brown-dark">
+
+                <span class="w-6 h-1 bg-brown-dark group-hover:bg-white"></span>
+                <span class="w-6 h-1 bg-brown-dark group-hover:bg-white"></span>
+                <span class="w-3 h-1 bg-brown-dark group-hover:bg-white"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero_banner md:py-0 max-h-auto w-full 
+         bg-none md:bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.1)),url('./images/hero-banner.jpg')]
+         md:bg-cover md:bg-no-repeat md:bg-right">
+        <div class="pb-8 container flex md:flex-row items-center flex-col max-w-5xl md:w-11/12 mx-auto">
+            <div class="ps-10 w-full md:w-1/2 lg:w-7/12 
+             bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.1)),url('./images/hero-banner.jpg')]
+             bg-cover bg-no-repeat md:bg-none space-y-0 py-10 md:py-0 md:space-y-4">
+
+                <!-- Heading -->
+                <h1
+                    class="pb-0 wow animate__animated animate__fadeInLeft text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-normal md:leading-tight lg:leading-tight">
+                    Dubai is Overpriced.<br /> Batumi is the Next Big Thing.
+                </h1>
+
+                <!-- Sub Heading -->
+                <h3 class="wow animate__animated animate__fadeInLeft text-2xl text-white font-semibold !my-6">
+                    While Dubai cools, Batumi delivers 16% returns + residency benefits.
+                </h3>
+
+                <!-- List -->
+                <ul class="space-y-2 !mt-0 text-base md:text-lg">
+                    <li class="text-sm wow animate__animated animate__fadeInLeft text-white flex items-center gap-2">
+                        <i class="fas fa-check-circle text-brown-light text-white"></i> Invest from $75K
+                    </li>
+
+                    <li class="text-sm wow animate__animated animate__fadeInLeft text-white flex items-center gap-2">
+                        <i class="fas fa-check-circle text-brown-light text-white"></i> Units fully managed for passive
+                        income
+                    </li>
+
+                    <li class="text-sm wow animate__animated animate__fadeInLeft text-white flex items-center gap-2">
+                        <i class="fas fa-check-circle text-brown-light text-white"></i> Buy online with wire or crypto
+                    </li>
+                </ul>
+
+                <!-- Button (if needed later) -->
+                <!-- <button type="button"
+        class="mt-16 bg-brown-light border-brown-light border-2 text-white font-semibold p-3 px-8 ms-10 rounded-full hover:bg-brown-dark cursor-pointer"
+        >
+        Contact Me
+    </button> -->
+            </div>
+
+            <div class="w-full md:w-1/2 lg:w-5/12">
+                <div class="px-2 md:bg-transparent bg-brown-dark py-10">
+                    <div class="wow animate__animated animate__fadeInUp bg-white max-w-[400px] mx-auto shadow-md m-5 p-4 md:p-8 rounded-2xl"
+                        data-wow-duration="1s">
+                        <h4 class="text-2xl font-bold mb-5">Get A Quote</h4>
+                        <form id="contactForm" method="POST" class="space-y-4">
+                            <input type="text" name="name" id="name" placeholder="Surname and name"
+                                class="py-2 w-full text-gray-800 border-b focus:outline-none focus:ring-0 border-gray-900" />
+
+                            <input type="tel" name="phone" id="phone" placeholder="Phone"
+                                class="py-2 w-full text-gray-800 border-b focus:outline-none focus:ring-0 border-gray-900" />
+
+                            <input type="email" name="email" id="email" placeholder="Email"
+                                class="py-2 w-full text-gray-800 border-b focus:outline-none focus:ring-0 border-gray-900" />
+
+                            <button type="submit" id="submitBtn"
+                                class="bg-[#D2B48C] text-white font-semibold p-3 w-full rounded-full text-sm cursor-not-allowed opacity-60 flex items-center justify-center text-xs sm:text-sm md:text-xs lg:text-sm"
+                                disabled>
+                                Book Your Free Investment Strategy Call
+                            </button>
+                            <p id="formStatus" class="text-center text-sm mt-2"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-16 px-3 max-w-5xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <p class="text-base uppercase text-brown-light tracking-wide font-bold mb-8">Featured Properties</p>
+            <h2
+                class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight md:leading-snug lg:leading-[4rem] wow animate__animated animate__flipInX">
+                Batumi Real Estate Investment Opportunities in Strategic Locations
+            </h2>
+
+
+            <p class="wow animate__animated animate__flipInX text-gray-400 mt-4 text-sm md:text-base w-9/12 mx-auto">
+                We showcase a curated selection of luxury properties and commercial real estate in Batumi. Whether
+                you&apos;re searching for a dream home or a high-ROI investment, these listings offer unmatched value
+                and
+                location.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3 lg:gap-6">
+
+            <!-- Card 1 -->
+            <div
+                class="group p-2 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="rounded-xl overflow-hidden mt-1">
+                    <a href="montemar.html">
+                        <img src="./images/montemar.jpg" alt="Luxury Apartment In Dubai"
+                            class="w-full h-60 object-cover cursor-pointer transform transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                </div>
+                <!-- Text Content -->
+                <div class="p-5 md:p-2 lg:p-5 wow animate__animated animate__fadeInLeft w-full">
+                    <p class="text-gray-600 mb-2">Montemar</p>
+                    <span class="bg-brown-light"
+                        style="display: block; width: 30%; height: 3px; content: ''; margin: 20px 0;"></span>
+                    <h2 class="text-2xl h-[120px] md:text-3xl font-bold text-brown-dark leading-snug mb-4">
+                        A Hotel-Type Multifunctional Complex in Gonio
+                    </h2>
+
+
+                    <!-- Description -->
+                    <!-- <p class="text-black mb-6 leading-relaxed">
+                        Developed by Gumbati Group, Montemar is a 16-storey complex just 15 minutes from Batumi,
+                        designed for both living and investment.
+                    </p>
+
+
+                    <ul class="space-y-2 text-base md:text-lg">
+                        <li class="text-black flex flex flex-row justify-start items-start gap-2"><i
+                                class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i> <span>3 blocks:
+                                Hotel (A), Apart-hotel (B), Investment apartments (C)</span></li>
+                        <li class="text-black flex flex items-start gap-2"><i
+                                class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i> Studio, 1BR, and
+                            2BR apartments — including exclusive units with balcony pools
+                            income</li>
+                        <li class="text-black flex flex items-start gap-2"><i
+                                class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i> Apartments
+                            delivered fully renovated or in Premium Condition (70% completed)
+                        </li>
+                        <li class="text-black flex flex items-start gap-2"><i
+                                class="fas fa-check-circle mt-1 text-brown-dark text-black me-3"></i> Ideal for
+                            short-term rentals and capital growth
+                        </li>
+                    </ul> -->
+
+                    <!-- <span class="bg-brown-light" style="display: block; width: 100px; height: 3px; content: ''; margin: 30px 0 0;"></span> -->
+
+                    <!-- Contact Info -->
+                    <div class="pt-4">
+                        <!-- <p class="mt-5 text-black mb-2">Make your seaside investment work for you — effortlessly.</p> -->
+                        <a href="montemar.html"
+                            class="inline-block border-brown-dark mt-5 border-2 text-white font-semibold p-3 px-8 rounded-full bg-brown-dark cursor-pointer">Get
+                            Montemar Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="group p-2 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="rounded-xl overflow-hidden mt-1">
+                    <a href="ambasadori.html">
+                        <img src="./images/2.webp" alt="Retail Investment Property In Dubai"
+                            class="w-full h-60 object-cover cursor-pointer transform transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                </div>
+                <!-- Text Content -->
+                <div class="p-5 md:p-2 lg:p-5 wow animate__animated animate__fadeInRight w-full">
+                    <p class="text-gray-600 mb-2">Ambasadori Island</p>
+                    <span class="bg-brown-light"
+                        style="display: block; width: 30%; height: 3px; content: ''; margin: 20px 0;"></span>
+                    <h2 class="h-[140px] text-2xl md:text-3xl font-bold text-brown-dark leading-snug mb-4">
+                        The Project That&apos;s Ahead of Its Time
+                    </h2>
+
+
+                    <!-- Description -->
+                    <!-- <p class="text-black mb-6 leading-relaxed">
+                        Ambasadori Island is an iconic, large-scale development shaping the future of Batumi.
+                    </p>
+
+
+                    <ul class="space-y-2 text-base md:text-lg">
+                        <li class="text-black flex flex items-start gap-2">
+                            <i class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i>
+                            <span>Artificial island
+                                with luxury residences, hotels, commercial zones
+                            </span>
+                        </li>
+                        <li class="text-black flex flex items-start gap-2">
+                            <i class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i>
+                            <span> Exceptional
+                                location with international visibility
+                                income
+                            </span>
+                        </li>
+                        <li class="text-black flex flex items-start gap-2">
+                            <i class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i>
+                            <span>Fast development
+                                backed by major investors
+                            </span>
+                        </li>
+                        <li class="text-black flex flex items-start gap-2">
+                            <i class="fas fa-check-circle mt-2 text-brown-dark text-black me-3"></i>
+                            <span>Historic project
+                                with high potential ROI and capital growth
+                            </span>
+                        </li>
+                    </ul> -->
+
+                    <!-- <span class="bg-brown-light" style="display: block; width: 100px; height: 3px; content: ''; margin: 20px 0;"></span> -->
+
+                    <!-- Contact Info -->
+                    <!-- <p class="mt-5 text-black mb-2"> Be part of the project that will redefine the region.</p> -->
+                    <a href="ambasadori.html"
+                        class="inline-block border-brown-dark mt-5 border-2 text-white font-semibold p-3 px-8 rounded-full bg-brown-dark cursor-pointer">Explore
+                        Ambasadori Options</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Testimonail -->
+    <section class="border-t-4 mt-4 border-brown-light py-16 px-6 md:px-20 bg-[#f5f5f7]">
+        <div class="max-w-6xl mx-auto text-center">
+
+            <!-- Heading -->
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-16">About Us</h2>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- Testimonial 1 -->
+                <div class="wow animate__animated animate__fadeInLeft bg-white shadow-md rounded-xl p-6 relative">
+                    <img src="./images/T-1.jpg" alt="testimonial" class="testimonial-img" />
+
+                    <style>
+                        .testimonial-img {
+                            max-height: 200px;
+                            margin: auto;
+                            display: block;
+                        }
+
+                        @media (min-width: 768px) {
+                            .testimonial-img {
+                                max-height: 400px;
+                                /* Bigger on desktop */
+                            }
+                        }
+                    </style>
+                    <p class="uppercase font-bold text-gray-800 mt-8">Thomas BOULMIER</p>
+
+                    <p class="text-gray-900 mb-6 leading-relaxed mt-8">
+                        At Staunton Investment, I leverage my experience as a former trader at Société Générale and
+                        Morgan
+                        Stanley to drive strategic real estate and financial investments. As a proprietary investor, I
+                        manage a portfolio of multi-million leveraged properties across Georgia, France, and the UAE,
+                        combining global expertise with disciplined execution.
+                    </p>
+                    <p class="text-gray-900 mb-6 leading-relaxed">
+                        My focus is on professionalism, integrity, and results, creating lasting partnerships and
+                        seizing
+                        opportunities in some of the world&apos;s most dynamic markets.
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="wow animate__animated animate__fadeInRight bg-white shadow-md rounded-xl p-6 relative">
+                    <img src="./images/T-1.jfif" alt="testimonail" class="testimonial-img" />
+                    <p class="uppercase font-bold text-gray-800 mt-8">Zinaida Akopova</p>
+                    <p class="text-gray-900 mb-6 leading-relaxed mt-8">
+                        At Staunton Investment, I bring over 7 years of experience as a sales manager in leading
+                        development
+                        companies to my role as a Georgian Real Estate Broker. I have worked with thousands of clients,
+                        focusing on luxury property investments and delivering tailored solutions in one of the
+                        region&apos;s most competitive markets.
+                    </p>
+                    <p class="text-gray-900 mb-6 leading-relaxed">
+                        By combining market expertise with a client-first approach, I strive to identify prime
+                        opportunities, build lasting relationships, and create successful outcomes for investors in
+                        Georgia&apos;s real estate sector.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-12 px-6 md:px-20 bg-[#1f1f1f]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+            <!-- Image -->
+            <div class="wow animate__animated animate__fadeInLeft w-full md:w-1/2 flex justify-center md:justify-start">
+                <img src="./images/where-is-georgia.webp" alt="Ali Zghaibeh"
+                    class="rounded-lg shadow-lg max-w-sm md:max-w-md">
+            </div>
+
+            <!-- Text Content -->
+            <div class="wow animate__animated animate__fadeInRight w-full md:w-1/2">
+                <p class="text-gray-400 mb-2">Georgia, Where Your Money Works Hardest</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#d4b48c] leading-snug mb-4">
+                    Low taxes, fast registration, global access — invest smarter
+                </h2>
+
+                <ul class="space-y-2 text-base md:text-lg">
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Visa-free to 95+ countries
+                    </li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Taxes: 0% property | 5%
+                        income | 1% corporate
+
+                    </li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Residency from $100K
+                        investment
+
+                    </li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Registration in 10 minutes
+                    </li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Pay by crypto or wire
+                    </li>
+                </ul>
+
+                <span class="bg-brown-light"
+                    style="display: block; width: 100px; height: 3px; content: ''; margin: 50px 0 0px;"></span>
+
+                <!-- Contact Info -->
+                <div class="pt-4">
+                    <button type="button"
+                        class="bg-brown-light border-brown-light mt-10 border-2 text-white font-semibold p-3 px-8 rounded-full hover:bg-brown-dark cursor-pointer">Book
+                        a Call to Learn More</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="border-brown-light border-t-4 py-12 px-6 md:px-20 bg-[#1f1f1f]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-10">
+            <!-- Text Content -->
+            <div class="wow animate__animated animate__fadeInLeft w-full md:w-1/2">
+                <p class="text-gray-400 mb-2">Batumi: High ROI, Luxury Lifestyle</p>
+                <span class="bg-brown-light"
+                    style="display: block; width: 30%; height: 3px; content: ''; margin: 20px 0;"></span>
+                <h2 class="text-2xl capitalize md:text-3xl font-bold text-[#d4b48c] leading-snug mb-4">
+                    Modern infrastructure, branded hotels, and booming demand.
+                </h2>
+
+                <ul class="space-y-2 text-base md:text-lg">
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i>Emaar $6B mega-project</li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> SFZ in Gonio</li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Europe-Asia strategic
+                        location
+                    </li>
+                    <li class="text-white flex items-center flex items-start gap-2"><i
+                            class="fas fa-check-circle text-brown-light text-white me-3"></i> Consistent rental income
+                    </li>
+                </ul>
+
+                <span class="bg-brown-light"
+                    style="display: block; width: 100px; height: 3px; content: ''; margin: 50px 0 0;"></span>
+
+                <button type="button"
+                    class="bg-brown-light border-brown-light mt-10 border-2 text-white font-semibold p-3 px-8 rounded-full hover:bg-brown-dark cursor-pointer">Discover
+                    Batumi Opportunities</button>
+            </div>
+
+
+            <!-- Image -->
+            <div
+                class="wow animate__animated animate__fadeInRight w-full md:w-1/2 flex justify-center md:justify-start">
+                <img src="./images/Batumi.jpg" alt="Ali Zghaibeh"
+                    class="rounded-lg shadow-lg mx-auto max-w-sm md:max-w-md">
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-20 px-4 md:px-8 max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-10">
+            Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    Can foreigners purchase real estate in Georgia?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Yes, any individual or company, regardless of nationality, can buy property.
+                </p>
+            </details>
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    What documents are needed to buy?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Just your passport or ID.
+                </p>
+            </details>
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    How long does the process take?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Around 10–15 minutes to complete registration.
+                </p>
+            </details>
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    Can I buy remotely?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Yes, the entire process can be handled online.
+                </p>
+            </details>
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    Can I apply for residency by investing?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Yes, investing over $100,000 in property qualifies you for a residence permit.
+                </p>
+            </details>
+
+            <!-- FAQ Item -->
+            <details class="group bg-white shadow-md rounded-xl p-4">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-800">
+                    Can I open a bank account in Georgia as a non-resident?
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p class="mt-2 text-gray-600">
+                    ✅ Yes, non-residents can easily open accounts at any local bank.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="text-center">
+            <ul class="mt-12 list-inside space-y-3 text-gray-800 text-base md:text-lg">
+                <li class="font-medium">
+                    Get insider tips to invest smarter in Georgia
+                </li>
+                <li class="font-medium">
+                    Review of the best real estate projects in Batumi
+                </li>
+                <li class="font-medium">
+                    How to get permanent residency
+                </li>
+                <li class="font-medium">
+                    Tax perks & easy bank setup
+                </li>
+            </ul>
+            <a href="#"
+                class="bg-brown-light inline-block mt-10 text-white px-6 py-3 rounded-lg hover:bg-brown-dark transition-all duration-300 mx-auto text-center gap-2">
+                Schedule Your Free 15-Minute Strategy Call
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="flex justify-center items-center py-12 px-4 bg-gray-100">
+        <div
+            class="bg-white shadow-lg rounded-xl p-8 md:p-12 max-w-2xl w-full text-center wow animate__animated animate__fadeInUp">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                Stay Ahead In Batumi Real Estate
+            </h2>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">
+                Get exclusive listings, market updates, and investment insights—delivered straight to your inbox.
+            </p>
+
+            <!-- Newsletter Form -->
+            <form id="newsletterForm" class="flex flex-col md:flex-row items-center gap-4 justify-center">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email *" required
+                    class="w-full md:flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-600" />
+                <button type="submit"
+                    class="bg-brown-light text-white px-6 py-3 rounded-lg hover:bg-brown-dark transition-all duration-300 flex items-center gap-2">
+                    Subscribe →
+                </button>
+            </form>
+
+            <!-- Success/Error Message -->
+            <p id="newsletterMessage" class="mt-2 text-center text-sm font-medium"></p>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-brown-dark text-center text-gray-300 px-6 pt-10 md:py-16 wow animate__animated animate__fadeInUp"
+        style="padding-top: 80px;">
+        <h3 class="tracking-widest text-sm text-gray-400 mb-10" style="letter-spacing: 5px;">FOLLOW US</h3>
+
+        <span class="px-4 py-2 mb-10 text-sm">Get
+            exclusive listings, market updates, and investment insights—delivered straight to your inbox.
+        </span>
+
+
+
+        <!-- Social Icons -->
+        <div class="flex justify-center space-x-4 mt-10 mb-6">
+            <a href="https://www.instagram.com/staunton.inv?igsh=MXBvbDI0OW1ieXR2MQ=="
+                class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+                <i class="text-2xl hover:text-brown-dark fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/thomas-boulmier-68628aaa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+                <i class="text-2xl hover:text-brown-dark fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com/@thomasboulmier?si=uokcvkJs_AY_1PfZ"
+                class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+                <i class="text-2xl hover:text-brown-dark fab fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@boulmierthomas?_r=1&_d=ek0j90b1hc5545&sec_uid=MS4wLjABAAAAQxyZG3VJHnSBFIJr8p-tghjzquqyqmONa0QasY_yaIVq0GFCGyNYUWj0qeJPA82J&share_author_id=7494976316371665942&sharer_language=en&source=h5_m&u_code=ek0jacf1hd9299&timestamp=1755701161&user_id=7495607662056031250&sec_user_id=MS4wLjABAAAAF3sxDNKQYG_SUgzZBIOYAW2XWfN18EgMis0l6sOL9TbxvMgwqYXjENjTOM1Se8YA&item_author_type=2&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7540527888711091986&share_link_id=12ef485c-e43a-457e-860c-1d77b08e68a9&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b7200%2Cb5836&social_share_type=5&enable_checksum=1"
+                class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+                <i class="text-2xl hover:text-brown-dark fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-xs text-gray-400">
+            © 2025 • All Rights Reserved • Design + Development By Batumi Real Estate
+        </p>
+    </footer>
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+971506544952
+" target="_blank"
+        class="wow animate__animated animate__bounceIn fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-green-600 transition">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <div
+            class="absolute w-[190px] top-[55%] -translate-y-1/2 right-full -translate-x-[10px] bg-white text-black p-2 rounded-sm text-xs capitalize shadow-lg">
+            contact us for more <strong>details</strong></div>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn"
+        class="hidden fixed bottom-24 right-6 bg-[#d4b48c] text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-[#b7956e] transition-opacity duration-300">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Progress indicator -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-transparent z-[1001]">
+        <div id="progressBar"
+            class="h-1 bg-gradient-to-r from-[#d4b48c] to-[#8a6d3b] w-0 transition-[width] duration-200 ease-linear">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMenu = document.getElementById("closeMenu");
+            const openMenuBtn = document.getElementById("openMenu");
+            const overlay = document.getElementById("menuOverlay");
+
+            // Function to open menu
+            const openMenu = () => {
+                mobileMenu.classList.remove("-translate-x-full");
+                mobileMenu.classList.add("translate-x-0");
+                overlay.classList.remove("hidden");
+            };
+
+            // Function to close menu
+            const closeMenuFn = () => {
+                mobileMenu.classList.remove("translate-x-0");
+                mobileMenu.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+            };
+
+            // Open button
+            openMenuBtn.addEventListener("click", openMenu);
+
+            // Close button
+            closeMenu.addEventListener("click", closeMenuFn);
+            window.addEventListener("scroll", closeMenuFn);
+
+            // Overlay click closes menu
+            overlay.addEventListener("click", closeMenuFn);
+
+
+
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const progressBar = document.getElementById('progressBar');
+
+            // Function to check scroll position and show/hide button
+            function toggleScrollTopButton() {
+                if (window.scrollY > 100) {
+                    scrollTopBtn.classList.remove('hidden');
+                    scrollTopBtn.classList.add('flex'); // show as flex when visible
+                } else {
+                    scrollTopBtn.classList.add('hidden');
+                    scrollTopBtn.classList.remove('flex');
+                }
+
+                // Update progress bar
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrollPercentage = (window.scrollY / documentHeight) * 100;
+                progressBar.style.width = scrollPercentage + '%';
+            }
+
+            // Function to scroll to top smoothly
+            function scrollToTop() {
+
+                mobileMenu.classList.remove("translate-x-0");
+                mobileMenu.classList.add("-translate-x-full");
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Event listeners
+            window.addEventListener('scroll', toggleScrollTopButton);
+            scrollTopBtn.addEventListener('click', scrollToTop);
+
+            // Initial check
+            toggleScrollTopButton();
+
+            const form = document.getElementById("contactForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const formStatus = document.getElementById("formStatus");
+
+            const fields = {
+                name: document.getElementById("name"),
+                phone: document.getElementById("phone"),
+                email: document.getElementById("email")
+            };
+
+            function validateForm() {
+                let isValid = true;
+
+                // ✅ Just check if fields are NOT empty
+                if (fields.name.value.trim() === "") isValid = false;
+                if (fields.phone.value.trim() === "") isValid = false;
+                if (fields.email.value.trim() === "") isValid = false;
+
+                // Enable/disable button
+                submitBtn.disabled = !isValid;
+                submitBtn.classList.toggle("cursor-not-allowed", !isValid);
+                submitBtn.classList.toggle("opacity-60", !isValid);
+                submitBtn.classList.toggle("hover:bg-[#B89A71]", isValid);
+
+                if (isValid) {
+                    submitBtn.classList.add("cursor-pointer");
+                } else {
+                    submitBtn.classList.remove("cursor-pointer");
+                }
+            }
+
+            // Run validation on input/change
+            Object.values(fields).forEach(field => {
+                field.addEventListener("input", validateForm);
+                field.addEventListener("change", validateForm);
+            });
+
+            const originalButtonContent = submitBtn.innerHTML;
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const data = {
+                    name: fields.name.value.trim(),
+                    phone: fields.phone.value.trim(),
+                    email: fields.email.value.trim()
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                        <svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Processing...
+                    `;
+
+                formStatus.textContent = "";
+                formStatus.className = "text-center text-sm mt-2";
+
+                fetch("./backend/sendEmail.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        if (res.status === "success") {
+                            formStatus.textContent = "✅ Your message has been sent successfully!";
+                            formStatus.classList.add("text-green-600", "font-medium");
+                            form.reset();
+                        } else {
+                            formStatus.textContent = "❌ " + res.message;
+                            formStatus.classList.add("text-red-600", "font-medium");
+                        }
+                        validateForm();
+                    })
+                    .catch(err => {
+                        formStatus.textContent = "⚠️ Something went wrong. Please try again later.";
+                        formStatus.classList.add("text-red-600", "font-medium");
+                        console.error("Error:", err);
+                    })
+                    .finally(() => {
+                        submitBtn.innerHTML = originalButtonContent;
+                    });
+            });
+
+            validateForm();
+
+
+
+            const newsletterForm = document.getElementById('newsletterForm');
+            const emailInput = document.getElementById('newsletterEmail');
+            const messageEl = document.getElementById('newsletterMessage');
+
+            newsletterForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+
+                // Basic email validation
+                if (!/^\S+@\S+\.\S+$/.test(email)) {
+                    messageEl.textContent = "Please enter a valid email address.";
+                    messageEl.classList.add('text-red-500');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('./backend/sendNewsletter.php', { // <-- update path
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        messageEl.textContent = "Thank you! You are subscribed.";
+                        messageEl.classList.remove('text-red-500');
+                        messageEl.classList.add('text-green-500');
+                        emailInput.value = '';
+                    } else {
+                        messageEl.textContent = "Oops! Something went wrong. Try again later.";
+                        messageEl.classList.add('text-red-500');
+                    }
+                } catch (err) {
+                    console.error(err);
+                    messageEl.textContent = "Network error. Please try again.";
+                    messageEl.classList.add('text-red-500');
+                }
+            });
+        });
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            dark: '#080607',   // Dark Brown
+                            light: '#b3a189'   // Light Brown
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

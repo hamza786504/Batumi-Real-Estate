@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome (for social icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/js/all.min.js"
+        integrity="sha512-gBYquPLlR76UWqCwD06/xwal4so02RjIR0oyG1TIhSGwmBTRrIkQbaPehPF8iwuY9jFikDHMGEelt0DtY7jtvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Batumi Luxury Real Estate - Montemar</title>
+
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(to right, #d4b48c, #8a6d3b);
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f5f0;
+        }
+
+        .brown-dark {
+            color: #5d4037;
+        }
+
+        .bg-brown-dark {
+            background-color: #5d4037;
+        }
+
+        .bg-brown-light {
+            background-color: #d7ccc8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/Pool\ \ Top.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+        }
+    </style>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const closeMenu = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.remove("-translate-x-full");
+            mobileMenu.classList.add("translate-x-0");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+        });
+    </script>
+    <script>
+        // Optional: customize Tailwind on the fly
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#4f46e5', // indigo-600
+                            dark: '#3730a3'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<!-- WOW.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+    integrity="sha512-3R8M9jv4n1C2Z4Qp8mJr3qvYtq8jvZxq1C5p0vQ7mY3L/2o8cVY8S8Vw0q0lKQpVw1bVx2eT2g4m7mQX3p7Ftg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+<script>
+    new WOW().init();
+</script>
+<style>
+
+</style>
+</head>
+
+
+    <!-- Header -->
+    <header class="z-50 bg-[#362f17ff] shadow-sm px-3">
+        <div class="container flex items-center justify-between max-w-6xl mx-auto">
+            <a href="./index.html" class="logo"><img src="./images/logo.png" class="max-w-24" alt="logo" /></a>
+            <div class="menu">
+                <nav id="mobileMenu"
+                    class="fixed bg-brown-light top-0 left-0 w-3/4 md:w-auto h-full p-4 transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:top-auto md:left-auto md:p-0 md:bg-transparent md:translate-x-0 md:transition-none z-50">
+
+                    <!-- Close button -->
+                    <div id="closeMenu" class="md:hidden absolute cursor-pointer top-3 right-5 text-white text-5xl">
+                        &times;
+                    </div>
+
+                    <ul
+                        class="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center space-y-6 md:space-y-0 md:space-x-4 lg:space-x-8 py-8 md:py-0 overflow-y-auto">
+                        
+                        <li class="pt-10 md:hidden">
+                            <a href="tel:+971506544952"
+                                class="flex items-center justify-center space-x-2 text-white text-base bg-transparent border-2 border-white p-2 px-4 rounded-full hover:bg-brown-dark md:hover:border-white hover:border-brown-dark"><span><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </span><span>+971506544952</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Overlay -->
+                <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>
+            </div>
+            <div class="hidden md:block cta md:mr-4">
+                <a href="tel:+971506544952"
+                    class="flex items-center justify-center space-x-2 text-white text-2xl bg-transparent border-2 border-white md:py-2 md:text-lg p-3 px-8 rounded-full hover:bg-brown-dark md:hover:border-white md:hover:bg-white md:hover:text-brown-dark hover:border-brown-dark"><span><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                    </span> <span>+971506544952</span>
+                </a>
+            </div>
+            <!-- Hamburger -->
+            <div id="openMenu"
+                class="group md:hidden ml-4 flex flex-col items-end bg-white rounded-full p-3 scale-75 transform space-y-1 cursor-pointer transition-colors duration-300 hover:bg-brown-dark">
+
+                <span class="w-6 h-1 bg-brown-dark group-hover:bg-white"></span>
+                <span class="w-6 h-1 bg-brown-dark group-hover:bg-white"></span>
+                <span class="w-3 h-1 bg-brown-dark group-hover:bg-white"></span>
+            </div>
+        </div>
+    </header>
+
+<!-- Hero Section -->
+<div class="hero flex items-center justify-center">
+    <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">Montemar</h1>
+        <p class="text-xl text-white mt-4">A Hotel-Type Multifunctional Complex in Gonio</p>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-brown-dark mb-6">Montemar by Gumbati</h2>
+
+        <div class="mb-8">
+            <p class="text-gray-700 leading-relaxed mb-4">
+                A striking 16-storey multifunctional complex in Gonio, Montemar blends innovative architecture,
+                hotel-style amenities, private balcony pools, spa, indoor and rooftop pools, and smart property
+                management—all just steps from the Black Sea and scenic mountains.
+            </p>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="./index.html"
+                class="bg-brown-dark text-white font-semibold py-3 px-8 rounded-full hover:bg-brown-light hover:text-brown-dark transition-colors">
+                Get a Quote
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Footer Section -->
+<footer class="bg-brown-dark text-center text-gray-300 px-6 pt-10 md:py-16 wow animate__animated animate__fadeInUp"
+    style="padding-top: 80px;">
+    <h3 class="tracking-widest text-sm text-gray-400 mb-10" style="letter-spacing: 5px;">FOLLOW US</h3>
+
+    <span class="px-4 py-2 mb-10 text-sm">Get
+        exclusive listings, market updates, and investment insights—delivered straight to your inbox.
+    </span>
+
+
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-4 mt-10 mb-6">
+        <a href="https://www.instagram.com/staunton.inv?igsh=MXBvbDI0OW1ieXR2MQ=="
+            class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+            <i class="text-2xl hover:text-brown-dark fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/thomas-boulmier-68628aaa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+            <i class="text-2xl hover:text-brown-dark fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://youtube.com/@thomasboulmier?si=uokcvkJs_AY_1PfZ"
+            class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+            <i class="text-2xl hover:text-brown-dark fab fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@boulmierthomas?_r=1&_d=ek0j90b1hc5545&sec_uid=MS4wLjABAAAAQxyZG3VJHnSBFIJr8p-tghjzquqyqmONa0QasY_yaIVq0GFCGyNYUWj0qeJPA82J&share_author_id=7494976316371665942&sharer_language=en&source=h5_m&u_code=ek0jacf1hd9299&timestamp=1755701161&user_id=7495607662056031250&sec_user_id=MS4wLjABAAAAF3sxDNKQYG_SUgzZBIOYAW2XWfN18EgMis0l6sOL9TbxvMgwqYXjENjTOM1Se8YA&item_author_type=2&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7540527888711091986&share_link_id=12ef485c-e43a-457e-860c-1d77b08e68a9&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b7200%2Cb5836&social_share_type=5&enable_checksum=1"
+            class="hover:bg-brown-light p-3 rounded-lg hover:bg-brown-dark transition-all">
+            <i class="text-2xl hover:text-brown-dark fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-xs text-gray-400">
+        © 2025 • Ali Zghaibeh • All Rights Reserved • Design + Development By Onixxmedia
+    </p>
+</footer>
+
+
+
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/+971506544952
+" target="_blank"
+    class="wow animate__animated animate__bounceIn fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-green-600 transition">
+    <i class="fab fa-whatsapp text-2xl"></i>
+    <div
+        class="absolute w-[190px] top-[55%] -translate-y-1/2 right-full -translate-x-[10px] bg-white text-black p-2 rounded-sm text-xs capitalize shadow-lg">
+        contact us for more <strong>details</strong></div>
+</a>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn"
+    class="hidden fixed bottom-24 right-6 bg-[#d4b48c] text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-[#b7956e] transition-opacity duration-300">
+    <i class="fas fa-arrow-up text-xl"></i>
+</button>
+
+<!-- Progress indicator -->
+<div class="fixed top-0 left-0 w-full h-1 bg-transparent z-[1001]">
+    <div id="progressBar"
+        class="h-1 bg-gradient-to-r from-[#d4b48c] to-[#8a6d3b] w-0 transition-[width] duration-200 ease-linear">
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const mobileMenu = document.getElementById("mobileMenu");
+        const closeMenu = document.getElementById("closeMenu");
+        const openMenuBtn = document.getElementById("openMenu");
+        const overlay = document.getElementById("menuOverlay");
+
+        // Function to open menu
+        const openMenu = () => {
+            mobileMenu.classList.remove("-translate-x-full");
+            mobileMenu.classList.add("translate-x-0");
+            overlay.classList.remove("hidden");
+        };
+
+        // Function to close menu
+        const closeMenuFn = () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        };
+
+        // Open button
+        openMenuBtn.addEventListener("click", openMenu);
+
+        // Close button
+        closeMenu.addEventListener("click", closeMenuFn);
+        window.addEventListener("scroll", closeMenuFn);
+
+        // Overlay click closes menu
+        overlay.addEventListener("click", closeMenuFn);
+
+
+
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        // Function to check scroll position and show/hide button
+        function toggleScrollTopButton() {
+            if (window.scrollY > 100) {
+                scrollTopBtn.classList.remove('hidden');
+                scrollTopBtn.classList.add('flex'); // show as flex when visible
+            } else {
+                scrollTopBtn.classList.add('hidden');
+                scrollTopBtn.classList.remove('flex');
+            }
+
+            // Update progress bar
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrollPercentage = (window.scrollY / documentHeight) * 100;
+            progressBar.style.width = scrollPercentage + '%';
+        }
+
+        // Function to scroll to top smoothly
+        function scrollToTop() {
+
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', toggleScrollTopButton);
+        scrollTopBtn.addEventListener('click', scrollToTop);
+
+        // Initial check
+        toggleScrollTopButton();
+
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const formStatus = document.getElementById("formStatus");
+
+        const fields = {
+            name: document.getElementById("name"),
+            phone: document.getElementById("phone"),
+            email: document.getElementById("email")
+        };
+
+        function validateForm() {
+            let isValid = true;
+
+            // ✅ Just check if fields are NOT empty
+            if (fields.name.value.trim() === "") isValid = false;
+            if (fields.phone.value.trim() === "") isValid = false;
+            if (fields.email.value.trim() === "") isValid = false;
+
+            // Enable/disable button
+            submitBtn.disabled = !isValid;
+            submitBtn.classList.toggle("cursor-not-allowed", !isValid);
+            submitBtn.classList.toggle("opacity-60", !isValid);
+            submitBtn.classList.toggle("hover:bg-[#B89A71]", isValid);
+
+            if (isValid) {
+                submitBtn.classList.add("cursor-pointer");
+            } else {
+                submitBtn.classList.remove("cursor-pointer");
+            }
+        }
+
+        // Run validation on input/change
+        Object.values(fields).forEach(field => {
+            field.addEventListener("input", validateForm);
+            field.addEventListener("change", validateForm);
+        });
+
+        const originalButtonContent = submitBtn.innerHTML;
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const data = {
+                name: fields.name.value.trim(),
+                phone: fields.phone.value.trim(),
+                email: fields.email.value.trim()
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+            <svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Processing...
+        `;
+
+            formStatus.textContent = "";
+            formStatus.className = "text-center text-sm mt-2";
+
+            fetch("./backend/sendEmail.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.status === "success") {
+                        formStatus.textContent = "✅ Your message has been sent successfully!";
+                        formStatus.classList.add("text-green-600", "font-medium");
+                        form.reset();
+                    } else {
+                        formStatus.textContent = "❌ " + res.message;
+                        formStatus.classList.add("text-red-600", "font-medium");
+                    }
+                    validateForm();
+                })
+                .catch(err => {
+                    formStatus.textContent = "⚠️ Something went wrong. Please try again later.";
+                    formStatus.classList.add("text-red-600", "font-medium");
+                    console.error("Error:", err);
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalButtonContent;
+                });
+        });
+
+        validateForm();
+    });
+</script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brown: {
+                        dark: '#080607',   // Dark Brown
+                        light: '#b3a189'   // Light Brown
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>
+
+</html>
